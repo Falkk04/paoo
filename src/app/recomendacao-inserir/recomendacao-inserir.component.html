@@ -1,0 +1,54 @@
+<mat-card>
+  <form #recomendacaoForm="ngForm">
+
+  <mat-form-field
+      appearance="fill">
+      <mat-label>Digite o titulo da sua recomendação:</mat-label>
+      <input
+          matInput
+          type="text"
+          name="titulo"
+          id="titulo"
+          ngModel
+          required
+          minlength="3"
+          #titulo
+          />
+      <button
+          *ngIf="true"
+          matSuffix
+          mat-icon-button
+          >
+          <mat-icon>close</mat-icon>
+      </button>
+      <mat-error>Pelo menos 3 caracteres</mat-error>
+  </mat-form-field>
+
+  <mat-form-field
+      appearance="fill">
+      <mat-label>Digite a descrição da sua recomendação:</mat-label>
+      <input
+          matInput
+          type="text"
+          name="texto"
+          id="texto"
+          ngModel
+          required
+          minlength="3"
+          #texto
+          />
+      <button
+          *ngIf="true"
+          matSuffix
+          mat-icon-button
+          >
+          <mat-icon>close</mat-icon>
+      </button>
+      <mat-error>Pelo menos 3 caracteres</mat-error>
+  </mat-form-field>
+
+  <button (click)="adicionar(titulo.value, texto.value)" mat-stroked-button color="primary" >
+    Inserir Recomendação
+  </button>
+</form>
+</mat-card>
